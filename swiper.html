@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<link rel="stylesheet" href="common.css" />
+<link rel="shortcut icon" href="favicon.ico" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<title>巡って埼玉</title>
+<style>
+    .target-box {
+    position: relative;
+    }
+    .complete {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    .sample-slider{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* スマートフォン用のスタイル */
+    @media screen and (max-width: 768px) {
+        .sample-slider .swiper-slide {
+            position: absolute;
+            height: 100%;
+            top: 50%;
+            transform: translateY(-50%);     
+            width: 100%; /* スマートフォンの画面幅に合わせる */
+        }
+    }
+    .sample-slider img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .sample-slider .swiper-slide {
+        height: 700px;
+        display: flex;
+        flex-direction: column; /* 縦に並べる */
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* テキストを中央揃え */
+        overflow: visible;
+    }
+    .sample-slider img {
+        width: 100%;
+        height: auto; /* 画像がスライド内にフィットするように */
+    }
+    .sample-slider .swiper-slide div {
+        display: block;           /* まずはフレックスの影響を除外 */
+        width: 100%;
+        max-width: none;
+        text-align: center;       /* テキスト中央揃え */
+        margin-top: 10px;         /* 画像とテキストの間に余白を追加 */
+        font-size: 2em;           /* 必要に応じてフォントサイズを調整 */
+        color: #333;              /* テキストの色を変更 */
+        white-space: nowrap;      /* テキストを一行で表示 */
+        overflow: visible;         /* テキストが親要素をはみ出した場合は隠す */
+        text-overflow: clip;  /* はみ出した場合に「...」を表示 */
+    }
+    /* ページネーションをテキストのすぐ下に配置 */
+    .swiper-pagination {
+        position: relative; /* relative に変更 */
+        margin-top: 0px;  /* ページネーションが画像のすぐ下に配置されるように、マイナスマージンを使う */
+        text-align: center;
+        z-index: 20;
+    }
+    </style>
+<div class="swiper sample-slider">
+    <div class="swiper-wrapper" id="swiper">
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<form method="post" action="./ar.php" name="target">
+    <input type="hidden" name="targetId" id="targetId" />
+    <input type="hidden" name="lat" id="lat" />
+    <input type="hidden" name="long" id="long" />
+    <input type="hidden" name="targetName" id="targetName" />
+</form>
+
+<script src="main.js">
+</script>

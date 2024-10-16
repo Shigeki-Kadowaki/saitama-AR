@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>巡って埼玉</title>
+</head>
+<body>
+    <div id="img"><img src="./image/logo2.png" style="zoom: 0.5;" alt=""></div>
+    <h1>新規ユーザ登録</h1>
+    <div id="list"></div>
+    <br>
+    <form id="form" action="register.php" method="post">
+        <!-- ID：<input type="number" name="id" required/><br> -->
+        氏名<br>
+        <input type="text" name="name" required/><br>
+        メールアドレス<br>
+        <input type="email" name="mail" required/><br>
+        パスワード<br>
+        <input type="password" name="pass" required/><br>
+        <button type="submit">新規登録</button>
+    </form> 
+    <div id="message"></div>
+    <p>登録済みの方は<a href="index.html">こちら</a></p>
+</body>
+</html>
